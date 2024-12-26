@@ -39,6 +39,8 @@ function Card() {
     }
 
     return (
+        <>
+
         <div className="main">
             <h2>TO-DO APP</h2>
             <div className="maininput">
@@ -53,11 +55,12 @@ function Card() {
             <button onClick={handleAddJob}>ADD</button>
             </div>
 
+            <div className="mainjob">
             <ul>
                 {jobs.map((job, index) => (
                     <li key={index}>
-                        {job}
-                        <button onClick={() => handleRemoveJob(index)}>Remove</button>
+                        <span className='jobhere'>{job}&nbsp;&nbsp;&nbsp;</span>
+                        <button onClick={() => handleRemoveJob(index)}>Remove</button>       
                         <button className="move-up" onClick={() => moveTaskUp(index)}>
                             👆
                         </button>
@@ -67,7 +70,9 @@ function Card() {
                     </li>
                 ))}
             </ul>
+            </div>
         </div>
+        </>
     );
 }
 
